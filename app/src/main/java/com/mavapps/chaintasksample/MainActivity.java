@@ -92,33 +92,34 @@ public class MainActivity extends AppCompatActivity {
 
         btnPrev.setOnClickListener(view -> {
             if (currentIndex > 0) {
-                if (!circleList.isEmpty() && !lineList.isEmpty()) {
-                    TextView lastCircle = circleList.get(circleList.size() - 1);
-                    ConstraintLayout[] lastLines = null;
-                    unsetFocusSingle(circles[currentIndex], lines[currentIndex - 1]);
-                    if (circleList.size() > 1) {
-                        circleList.remove(circleList.size() - 1);
-                    }
-                    if (lineList.size() > 1) {
-                        lineList.remove(lineList.size() - 1);
-                    }
+                unsetFocusSingle(circles[currentIndex], lines[currentIndex - 1]);
+
+                if (!circleList.isEmpty()) {
+                    circleList.remove(circleList.size() - 1);
                 }
+                if (!lineList.isEmpty()) {
+                    lineList.remove(lineList.size() - 1);
+                }
+
                 currentIndex--;
 
                 List<TextView> currentFocusCircles = new ArrayList<>();
                 List<ConstraintLayout[]> currentFocusLines = new ArrayList<>();
-                for(int i = 0; i <= currentIndex; i++) {
+                for (int i = 0; i <= currentIndex; i++) {
                     currentFocusCircles.add(circles[i]);
                     if (i < currentIndex) {
                         currentFocusLines.add(lines[i]);
                     }
                 }
+
                 setFocus(currentFocusCircles, currentFocusLines);
+
                 if (currentIndex < textDescriptions.length) {
                     textDescription.setText(textDescriptions[currentIndex]);
                 }
             }
         });
+
 
         btnNext.setOnClickListener(view -> {
             if (currentIndex < circles.length - 1) {
