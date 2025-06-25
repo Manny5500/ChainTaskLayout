@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- hatiin sa dalawa ang layout isang top view saka mainview -->
+    <!--topview-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="?attr/colorPrimaryContainer"
+        android:id="@+id/topView"
+        app:layout_constraintBottom_toTopOf="@id/mainView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <!-- itong topview is divided into two -->
+        <!-- topCircles and bottomCircles ang mga ito-->
+        <!-- topCircles and bottomCircles contains each 3 slots also-->
+        <!-- left middle and right ang mga yon-->
+        <!-- left and right has circle and one line-->
+        <!-- while middle has one circle and two lines-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/topCircles"
+            app:layout_constraintBottom_toTopOf="@id/bottomCircles"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/topMiddle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/topLeft"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                app:layout_constraintHorizontal_weight="1">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/circleTopLeft"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/circleDescriptionTopLeft"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:id="@+id/circleNumberTopLeft"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/circle_background_outlined"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="24sp"/>
+
+                    <TextView
+                        app:layout_constraintTop_toBottomOf="@id/circleNumberTopLeft"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:id="@+id/circleDescriptionTopLeft"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:gravity="center"
+                        android:text="Test"
+                        android:textSize="12sp"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:background="#B39DFF"
+                    app:layout_constraintStart_toEndOf="@id/circleTopLeft"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/circleTopLeft"
+                    android:id="@+id/circleLineTopLeft"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="0dp"
+                    android:layout_height="10dp">
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                app:layout_constraintStart_toEndOf="@id/topLeft"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/topRight"
+                app:layout_constraintTop_toTopOf="@+id/topLeft"
+                android:id="@+id/topMiddle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_weight="1">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:background="#B39DFF"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/circleTopMiddle"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/circleLineTopMiddle1"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="0dp"
+                    android:layout_height="10dp">
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/circleTopMiddle"
+                    app:layout_constraintStart_toEndOf="@id/circleLineTopMiddle1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/circleLineTopMiddle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/circleDescriptionTopMiddle"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:id="@+id/circleNumberTopMiddle"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/circle_background_outlined"
+                        android:gravity="center"
+                        android:text="2"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="24sp"/>
+
+                    <TextView
+                        app:layout_constraintTop_toBottomOf="@id/circleNumberTopMiddle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:id="@+id/circleDescriptionTopMiddle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:gravity="center"
+                        android:text="Test"
+                        android:textSize="12sp"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:background="#B39DFF"
+                    app:layout_constraintStart_toEndOf="@id/circleTopMiddle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/circleLineTopMiddle2"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="0dp"
+                    android:layout_height="10dp">
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                app:layout_constraintStart_toEndOf="@id/topMiddle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/topMiddle"
+                android:id="@+id/topRight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_weight="1">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:background="#B39DFF"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/circleTopRight"
+                    android:id="@+id/circleLineTopRight"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="0dp"
+                    android:layout_height="10dp">
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/circleTopRight"
+                    app:layout_constraintStart_toEndOf="@id/circleLineTopRight"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/circleDescriptionTopRight"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:id="@+id/circleNumberTopRight"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/circle_background_outlined"
+                        android:gravity="center"
+                        android:text="3"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="24sp"/>
+
+                    <TextView
+                        app:layout_constraintTop_toBottomOf="@id/circleNumberTopRight"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:id="@+id/circleDescriptionTopRight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:gravity="center"
+                        android:text="Test"
+                        android:textSize="12sp"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottomCircles"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topCircles"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/bottomMiddle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/bottomLeft"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_weight="1">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/circleBottomLeft"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/circleDescriptionBottomLeft"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:id="@+id/circleNumberBottomLeft"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/circle_background_outlined"
+                        android:gravity="center"
+                        android:text="4"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="24sp"/>
+
+                    <TextView
+                        app:layout_constraintTop_toBottomOf="@id/circleNumberBottomLeft"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:id="@+id/circleDescriptionBottomLeft"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:gravity="center"
+                        android:text="Test"
+                        android:textSize="12sp"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:background="#B39DFF"
+                    app:layout_constraintStart_toEndOf="@id/circleBottomLeft"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/circleBottomLeft"
+                    android:id="@+id/circleLineBottomLeft"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="0dp"
+                    android:layout_height="10dp">
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                app:layout_constraintStart_toEndOf="@id/bottomLeft"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/bottomRight"
+                app:layout_constraintTop_toTopOf="@+id/bottomLeft"
+                android:id="@+id/bottomMiddle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_weight="1">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:background="#B39DFF"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/circleBottomMiddle"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/circleLineBottomMiddle1"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="0dp"
+                    android:layout_height="10dp">
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/circleBottomMiddle"
+                    app:layout_constraintStart_toEndOf="@id/circleLineBottomMiddle1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/circleLineBottomMiddle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/circleDescriptionBottomMiddle"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:id="@+id/circleNumberBottomMiddle"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/circle_background_outlined"
+                        android:gravity="center"
+                        android:text="5"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="24sp"/>
+
+                    <TextView
+                        app:layout_constraintTop_toBottomOf="@id/circleNumberBottomMiddle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:id="@+id/circleDescriptionBottomMiddle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:gravity="center"
+                        android:text="Test"
+                        android:textSize="12sp"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:background="#B39DFF"
+                    app:layout_constraintStart_toEndOf="@id/circleBottomMiddle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/circleLineBottomMiddle2"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="0dp"
+                    android:layout_height="10dp">
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                app:layout_constraintStart_toEndOf="@id/bottomMiddle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/bottomMiddle"
+                android:id="@+id/bottomRight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_weight="1">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:background="#B39DFF"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/circleBottomRight"
+                    android:id="@+id/circleLineBottomRight"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="0dp"
+                    android:layout_height="10dp">
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/circleBottomRight"
+                    app:layout_constraintStart_toEndOf="@id/circleLineBottomRight"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/circleDescriptionBottomRight"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:id="@+id/circleNumberBottomRight"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/circle_background_outlined"
+                        android:gravity="center"
+                        android:text="6"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="24sp"/>
+
+                    <TextView
+                        app:layout_constraintTop_toBottomOf="@id/circleNumberBottomRight"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:id="@+id/circleDescriptionBottomRight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:gravity="center"
+                        android:text="Test"
+                        android:textSize="12sp"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topView"
+        android:padding="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <TextView
+            android:id="@+id/textDescription"
+            android:text="Test"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <Button
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/textDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="PREV"
+            android:id="@+id/btnPrev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </Button>
+
+        <Button
+            app:layout_constraintTop_toTopOf="@id/btnPrev"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/btnNext"
+            android:text="NEXT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </Button>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
